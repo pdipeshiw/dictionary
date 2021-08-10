@@ -1,0 +1,55 @@
+.word-result {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  overflow-x: hidden;
+  height: 55vh;
+  border: 10px solid rgb(34, 33, 33);
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.initial-sub-title {
+  font-size: 3vw;
+  font-family: 'Raleway', sans-serif;
+}
+
+.single-meaning,
+.error-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+.definition-hr {
+  background-color: black;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .meanings {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 60vh;
+  }
+}
+
+.error-title,
+.error-message,
+.error-resolution {
+  font-family: 'Raleway', sans-serif;
+  padding-bottom: 10px;
+}
+
+.error-title {
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+.error-message {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
