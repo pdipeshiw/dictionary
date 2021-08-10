@@ -1,10 +1,10 @@
 import { TextField } from '@material-ui/core';
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import debounce from 'lodash.debounce';
+import debounce from 'lodash/debounce';
 
 import availableLanguages from '../../data/language';
 import './Header.css';
@@ -14,15 +14,17 @@ export default function Header({
   setSelectedLanguge,
   word,
   setWord,
-  fetchAPIResponse,
+  fetchAPIResponse
 }) {
-  const debouncedSave = useRef(debounce(nextValue => fetchAPIResponse(nextValue), 1000)).current;
+  const debouncedSave = useRef(
+    debounce((nextValue) => fetchAPIResponse(nextValue), 1000)
+  ).current;
 
-const handleChange = event => {
-  const { value: nextValue } = event.target;
-  setWord(nextValue);
-  debouncedSave(nextValue);
-};
+  const handleChange = (event) => {
+    const { value: nextValue } = event.target;
+    setWord(nextValue);
+    debouncedSave(nextValue);
+  };
   return (
     <div className="header">
       <span className="title">{word ? word : 'Dictionary'}</span>
